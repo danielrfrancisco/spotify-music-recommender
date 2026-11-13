@@ -10,4 +10,3 @@ scikit-learn==1.9.1
 # Entorno de desarrollo
 jupyter==1.1.1
 ipykernel==7.4.0
-ipython==9.17.1

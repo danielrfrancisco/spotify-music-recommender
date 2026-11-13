@@ -1,5 +1,4 @@
 import pandas as pd
-from IPython.display import display
 from sklearn.metrics.pairwise import euclidean_distances, cosine_similarity
 
 # Número máximo de coincidencias mostradas durante una búsqueda
@@ -101,7 +100,7 @@ def seleccionar_cancion():
             opciones = coincidencias.head(LIMITE_RESULTADOS)
 
             print('\nCanciones encontradas:')
-            display(opciones)
+            print(opciones.to_string())
 
             print('\nIntroduce el índice de la canción que deseas seleccionar.')
 
@@ -127,7 +126,9 @@ def seleccionar_cancion():
 
         # Mostrar la canción seleccionada
         print('\nCanción seleccionada:')
-        display(df.loc[[indice], ['track_name', 'artists', 'album_name']])
+        print(
+            df.loc[[indice], ['track_name', 'artists', 'album_name']].to_string()
+        )
 
         # Solicitar confirmación
         while True:
@@ -256,4 +257,4 @@ def ejecutar_recomendador(n_recomendaciones = 10):
 
     # Mostrar los resultados
     print('\nCanciones recomendadas:')
-    display(recomendaciones)
+    print(recomendaciones.to_string())
